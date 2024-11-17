@@ -26,8 +26,13 @@ fn main() {
     // md5ハッシュ化
     let digest = md5::compute(&f1);
     let e = format!("{:x}", digest);
-    let auth_user_output = format!("kodachi|{}\ncf90b117a31e7c2bb53cac3186b867b0", e);
-    info!("ユーザ名を生成しました。: {}", auth_user_output);
+    let auth_user_username_output = format!("kodachi|{}", e);
+    let auth_user_password_output = format!("cf90b117a31e7c2bb53cac3186b867b0");
+    let auth_user_output = format!(
+        "{}\n{}",
+        auth_user_username_output, auth_user_password_output
+    );
+    info!("ユーザ名を生成しました。: {}", auth_user_username_output);
 
     let password = "a30@06e61-79-34-88-A4-C3@".as_bytes();
 
