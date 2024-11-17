@@ -2,9 +2,8 @@
 # https://github.com/rust-build/rust-build.action#build-windows-and-linux-and-upload-as-zip
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [created]
 
 jobs:
   release:
